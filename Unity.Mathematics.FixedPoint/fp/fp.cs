@@ -1123,5 +1123,15 @@ namespace Unity.Mathematics.FixedPoint
         {
             m_rawValue = value * ONE;
         }
+
+        /// <summary>
+        /// Creates an fp from a raw long value. Note that knowledge of what this value ought to be depends on the
+        /// internal logic of this class, and so it breaks encapsulation to provide this. Tread carefully!
+        /// </summary>
+        /// <param name="rawValue"></param>
+        public static fp CreateFromRaw(long rawValue) 
+        {
+            return new fp(rawValue);
+        }
     }
 }
