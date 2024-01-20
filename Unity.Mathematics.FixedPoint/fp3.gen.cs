@@ -100,6 +100,16 @@ namespace Unity.Mathematics.FixedPoint
             this.z = (fp)v.z;
         }
 
+        /// <summary>Constructs a fp3 vector from a double3 vector by componentwise conversion.</summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Obsolete("This method could cause precision loss and should be avoided.")]
+        public fp3(double3 v)
+        {
+            this.x = (fp)v.x;
+            this.y = (fp)v.y;
+            this.z = (fp)v.z;
+        }
+
         /// <summary>Constructs a fp3 vector from a single uint value by converting it to fp and assigning it to every component.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public fp3(uint v)
