@@ -1,7 +1,7 @@
 {
   "name": "com.danielmansson.mathematics.fixedpoint",
   "displayName": "Mathematics.FixedPoint",
-  "version": "0.1.0-ng1",
+  "version": "0.1.0-nevergames1",
   "unity": "2019.3",
   "description": "Nevergames fork of Fixed-point extension of Unity's C# math library based on FixedMath.Net and Unity.Mathematics.",
   "keywords": [
