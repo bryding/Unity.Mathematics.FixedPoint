@@ -150,6 +150,18 @@ namespace Unity.Mathematics.FixedPoint
         public static explicit operator fp3(uint3 v) { return new fp3(v); }
 
 
+        /// <summary>Explicitly converts a fp3 to a float3</summary>
+        public static explicit operator float3(fp3 value)
+        {
+            return new float3((float) value.x, (float) value.y, (float) value.z);
+        }
+
+        /// <summary>Explicitly converts a fp3 to a double3</summary>
+        public static explicit operator double3(fp3 value)
+        {
+            return new double3((double) value.x, (double) value.y, (double) value.z);
+        }
+
         /// <summary>Returns the result of a componentwise multiplication operation on two fp3 vectors.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fp3 operator * (fp3 lhs, fp3 rhs) { return new fp3 (lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z); }
