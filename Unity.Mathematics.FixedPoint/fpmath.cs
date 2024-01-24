@@ -493,8 +493,6 @@ namespace Unity.Mathematics.FixedPoint
         /// <summary>Returns the componentwise result of raising x to the power y.</summary>
         public static fp4 pow(fp4 x, fp4 y) { return new fp4(pow(x.x, y.x), pow(x.y, y.y), pow(x.z, y.z), pow(x.w, y.w)); }
 
-
-        [System.Obsolete(NOT_SUPPORTED_YET, true)]
         /// <summary>Returns the base-e exponential of x.</summary>
         public static fp exp(fp x) 
         { 
