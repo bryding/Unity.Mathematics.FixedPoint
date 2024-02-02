@@ -698,7 +698,14 @@ namespace Unity.Mathematics.FixedPoint
         static public fp3 normalizesafe(fp3 x, fp3 defaultvalue = new fp3())
         {
             fp len = fpmath.dot(x, x);
-            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > Accuracy);
+            if (len <= Accuracy) 
+            {
+                return defaultvalue;
+            }
+            else
+            {
+                return x * fpmath.rsqrt(len);
+            }
         }
 
         /// <summary>
