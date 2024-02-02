@@ -679,6 +679,8 @@ namespace Unity.Mathematics.FixedPoint
         /// <summary>Returns a normalized version of the fp4 vector x by scaling it by 1 / length(x).</summary>
         public static fp4 normalize(fp4 x) { return rsqrt(dot(x, x)) * x; }
 
+        public static readonly fp Accuracy = new fp(1) / 1000000;
+
         /// <summary>
         /// Returns a safe normalized version of the fp2 vector x by scaling it by 1 / length(x).
         /// Returns the given default value when 1 / length(x) does not produce a finite number.
@@ -686,7 +688,7 @@ namespace Unity.Mathematics.FixedPoint
         static public fp2 normalizesafe(fp2 x, fp2 defaultvalue = new fp2())
         {
             fp len = fpmath.dot(x, x);
-            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > 0.00000001m);
+            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > Accuracy);
         }
 
         /// <summary>
@@ -696,7 +698,7 @@ namespace Unity.Mathematics.FixedPoint
         static public fp3 normalizesafe(fp3 x, fp3 defaultvalue = new fp3())
         {
             fp len = fpmath.dot(x, x);
-            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > 0.00000001m);
+            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > Accuracy);
         }
 
         /// <summary>
@@ -706,7 +708,7 @@ namespace Unity.Mathematics.FixedPoint
         static public fp4 normalizesafe(fp4 x, fp4 defaultvalue = new fp4())
         {
             fp len = fpmath.dot(x, x);
-            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > 0.00000001m);
+            return fpmath.select(defaultvalue, x * fpmath.rsqrt(len), len > Accuracy);
         }
 
 
